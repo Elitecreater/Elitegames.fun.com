@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVault | Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link id="favicon" rel="icon" href="https://via.placeholder.com/32/00ff00" type="image/x-icon">
+</head>
+<body>
+
+    <nav>
+        <h1>GameVault</h1>
+        <div class="nav-links">
+            <a href="#">Games</a>
+            <a href="#" onclick="openCloakSettings()">Settings</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="game-grid">
+            <div class="card">Game 1</div>
+            <div class="card">Game 2</div>
+            <div class="card">Game 3</div>
+            <div class="card">Game 4</div>
+        </section>
+    </main>
+
+    <div id="cloakModal" class="modal">
+        <div class="modal-content">
+            <h3>Tab Cloaker</h3>
+            <p>Disguise your tab when you switch away.</p>
+            <input type="text" id="cloakTitle" placeholder="Tab Title (e.g. My Drive)">
+            <input type="text" id="cloakIcon" placeholder="Favicon URL">
+            <button onclick="saveCloak()">Save Settings</button>
+            <button onclick="closeCloakSettings()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
