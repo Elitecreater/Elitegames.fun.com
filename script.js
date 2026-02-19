@@ -1,6 +1,6 @@
 // --- CONFIGURATION ---
 const SITE_PASSWORD = "openthegames"; // Change this to your desired password
-let panicUrl = localStorage.getItem('panicUrl') || "https://google.com";
+let panicUrl = localStorage.getItem('panicUrl') || "https://www.ixl.com/dashboard";
 
 // --- PASSWORD LOGIC ---
 function checkPassword() {
@@ -17,7 +17,6 @@ function checkAction() {
     if (attempts >= maxAttempts) {
         alert("//radmanplays.github.io/Eaglercraft-1.21/"););
         // Disable button or take further action here
-    "//radmanplays.github.io/Eaglercraft-1.21/");
     }
 }
 
@@ -25,7 +24,7 @@ function checkAction() {
 document.addEventListener('keydown', (e) => {
     // Triggers if you press the "Escape" key
     if (e.key === "Escape") {
-        window.location.href = panicUrl;
+        window.location."https://myapps.classlink.com/home" = panicUrl;
     }
 });
 
@@ -35,20 +34,20 @@ function saveCloak() {
     const icon = document.getElementById('cloakIcon').value;
     const pUrl = document.getElementById('panicUrl').value;
 
-    localStorage.setItem('cloakTitle', title);
-    localStorage.setItem('cloakIcon', icon);
-    localStorage.setItem('panicUrl', pUrl);
+    localStorage.setItem('home-mydrive', title);
+    localStorage.setItem("https://www.vecteezy.com/png/17395378-google-drive-icons"', icon);
+    localStorage.setItem('https://myapps.classlink.com/home', pUrl);
     
     panicUrl = pUrl; // Update local variable
-    alert("Settings Updated!");
+    alert("set changes");
 }
 
 // --- CLOAKING LOGIC (from previous step) ---
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
         document.title = localStorage.getItem('cloakTitle') || "My Drive";
-        document.getElementById('favicon').href = localStorage.getItem('cloakIcon') || "";
+        document.getElementById('favicon').href = localStorage.getItem('https://www.vecteezy.com/png/17395378-google-drive-icons') || icon;
     } else {
-        document.title = "GameVault | Hub";
+        document.title = "my-drive | home";
     }
 });
