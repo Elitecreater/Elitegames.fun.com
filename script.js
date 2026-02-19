@@ -1,27 +1,44 @@
-let originalTitle = document.title;
-let originalFavicon = document.getElementById('favicon').href;
+const SITE_PASSWORD = "1234"; // Change this to your desired password
+let panicUrl = localStorage.getItem('panicUrl') || "https://google.com";
 
-// Load saved settings from local storage
-let cloakTitle = localStorage.getItem('cloakTitle') || "Google Drive";
-let cloakIcon = localStorage.getItem('cloakIcon') || "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";
-
-function saveCloak() {
-    cloakTitle = document.getElementById('cloakTitle').value;
-    cloakIcon = document.getElementById('cloakIcon').value;
-    localStorage.setItem('cloakTitle', cloakTitle);
-    localStorage.setItem('cloakIcon', cloakIcon);
-    alert("Settings Saved!");
+// --- PASSWORD LOGIC ---
+function checkPassword() {
+    const input = document.getElementById('passInput').value;
+    if (input === SITE_PASSWORD) {
+        document.getElementById('passwordOverlay').classList.add('hidden');
+    } else {
+        alert("Access Denied");
+    }
 }
 
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        document.title = cloakTitle;
-        document.getElementById('favicon').href = cloakIcon;
-    } else {
-        document.title = originalTitle;
-        document.getElementById('favicon').href = originalFavicon;
+// --- PANIC BUTTON LOGIC ---
+document.addEventListener('keydown', (e) => {
+    // Triggers if you press the "Escape" key
+    if (e.key === "Escape") {
+        window.location.href = panicUrl;
     }
 });
 
-function openCloakSettings() { document.getElementById('cloakModal').style.display = 'block'; }
-function closeCloakSettings() { document.getElementById('cloakModal').style.display = 'none'; }
+// --- UPDATED SAVE FUNCTION ---
+function saveCloak() {
+    const title = document.getElementById('cloakTitle').value;
+    const icon = document.getElementById('cloakIcon').value;
+    const pUrl = document.getElementById('panicUrl').value;
+
+    localStorage.setItem('cloakTitle', title);
+    localStorage.setItem('cloakIcon', icon);
+    localStorage.setItem('panicUrl', pUrl);
+    
+    panicUrl = pUrl; // Update local variable
+    alert("Settings Updated!");
+}
+
+// --- CLOAKING LOGIC (from previous step) ---
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        document.title = localStorage.getItem('cloakTitle') || "My Drive";
+        document.getElementById('favicon').href = localStorage.getItem('cloakIcon') || "";
+    } else {
+        document.title = "GameVault | Hub";
+    }
+});
