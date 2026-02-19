@@ -1,3 +1,4 @@
+// --- CONFIGURATION ---
 const SITE_PASSWORD = "1234"; // Change this to your desired password
 let panicUrl = localStorage.getItem('panicUrl') || "https://google.com";
 
