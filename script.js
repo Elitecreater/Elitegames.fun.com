@@ -1,5 +1,5 @@
 // --- CONFIGURATION ---
-const SITE_PASSWORD = "1234"; // Change this to your desired password
+const SITE_PASSWORD = "openthegames"; // Change this to your desired password
 let panicUrl = localStorage.getItem('panicUrl') || "https://google.com";
 
 // --- PASSWORD LOGIC ---
@@ -8,7 +8,7 @@ function checkPassword() {
     if (input === SITE_PASSWORD) {
         document.getElementById('passwordOverlay').classList.add('hidden');
     } else {
-        alert("Access Denied");
+        alert("Incorrect Password. Redirecting to https://radmanplays.github.io/Eaglercraft-1.21/");
     }
 }
 
