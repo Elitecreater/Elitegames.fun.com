@@ -8,7 +8,16 @@ function checkPassword() {
     if (input === SITE_PASSWORD) {
         document.getElementById('passwordOverlay').classList.add('hidden');
     } else {
-        alert("Incorrect Password. Redirecting to https://radmanplays.github.io/Eaglercraft-1.21/");
+        if let attempts = 0;
+const maxAttempts = 3;
+
+function checkAction() {
+    attempts++;
+    
+    if (attempts >= maxAttempts) {
+        alert("//radmanplays.github.io/Eaglercraft-1.21/"););
+        // Disable button or take further action here
+    "//radmanplays.github.io/Eaglercraft-1.21/");
     }
 }
 
